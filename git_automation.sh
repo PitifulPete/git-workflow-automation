@@ -49,7 +49,7 @@ function sync_with_upstream() {
 
 # Stage 2: This function creates a new branch
 function create_new_branch() {
-	read -p "Enter the name of your new branch: " new_branch
+	read -r -p "Enter the name of your new branch: " new_branch
 	echo "Creating and switching to branch $new_branch..."
 	git checkout -b "$new_branch"
 	if [ $? -eq 0 ]; then
@@ -61,7 +61,7 @@ function create_new_branch() {
 
 # Stage 3: This function adds and commit changes
 function add_and_commit_changes() {
-	read -p "Enter the file to add (only specify a single file and use '.' if you want to add all): " files_to_add
+	read -r -p "Enter the file to add (only specify a single file and use '.' if you want to add all): " files_to_add
 	git add "$files_to_add"
 	git status
 
@@ -70,7 +70,7 @@ function add_and_commit_changes() {
 		echo "Do you still need to add a file? [y/n]"
 		read add_choice
 		if [ "$add_choice" == "y" ]; then
-			read -p "Enter another file to add (only specify a single file): " another_file_to_add
+			read -r -p "Enter another file to add (only specify a single file): " another_file_to_add
 			git add "$another_file_to_add"
 			git status
 		elif [ "$add_choice" == "n" ]; then
@@ -80,8 +80,8 @@ function add_and_commit_changes() {
 		fi
 	done
 
-	read -p "Enter your commit message: " commit_msg
-	read -p "Enter an additional commit message (optional, press enter to skip): " additional_commit_msg
+	read -r -p "Enter your commit message: " commit_msg
+	read -r -p "Enter an additional commit message (optional, press enter to skip): " additional_commit_msg
 
 	if 	[ -z "$commit_msg" ];then
 		echo "Error: You have to input a commit message"
