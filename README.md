@@ -22,7 +22,7 @@ The fourth option automates the process of syncing your current branch with upst
 
 The fifth option is the exit option. It allows you to terminate the process. You can always exit at any point and re-execute the script later without affecting your progress.
 
-
+<br><br/>
 To execute the script, follow these steps:
 
 - Ensure that you are in the directory of the repository where you want to perform Git operations.
