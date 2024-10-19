@@ -25,6 +25,21 @@ The fifth option is the exit option. It allows you to terminate the process. You
 <br><br/>
 To execute the script, follow these steps:
 
+- Download the script using this cURL command: 
+  ```
+  curl -O https://raw.githubusercontent.com/PitifulPete/git-workflow-automation/main/autogit.sh 
+  ```
+  Alternatively, you can clone the script.
+- Make the script executable by running `chmod +x /path-to-script/autogit.sh`. You can skip this step if you are a Windows user using Git Bash, Windows interprets script directly.
+- Create an alias (a shortcut name) for the script so that you can execute it from anywhere on the command line without specifying its path. Follow these steps to create an alias for the script:
+	1. Open your shell configuration file. To do this on Linux, WSL, or Windows Git Bash, execute `nano ~/.bashrc`. For macOS, execute `nano ~/.zshrc`.
+	2. Add the alias:
+	   ```
+     alias autogit='path-to-script/autogit.sh'    
+	   ```
+	   The shortcut name for the script is autogit. You can replace "autogit" with your preferred name.	
+	3. Save your updates (CTRL + O) and exit nano (CTRL + X).
+	4. Reload the shell configuration file from the command line using `source ~/.bashrc` or `source ~/.zshrc` for macOS. This applies the updates you just made to the configuration file in the current terminal session.
 - Ensure that you are in the directory of the repository where you want to perform Git operations.
-- Make the script executable by running `chmod +x /path-to-script/git_automation.sh`. You can skip this if you are a Windows user using Git Bash, Windows interprets script directly.
-- Execute the script by running `/path-to-script/git__automation.sh`. 
+- Execute the script by running `autogit`.
+           
